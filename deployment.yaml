@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gojenkins2024-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gojenkins2024
+  template:
+    metadata:
+      labels:
+        app: gojenkins2024
+    spec:
+      containers:
+      - name: gojenkins2024
+        image: gabeuyi1998/gojenkins2024:latest
+        ports:
+        - containerPort: 3000
