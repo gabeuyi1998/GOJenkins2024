@@ -18,3 +18,18 @@ EXPOSE 3000
 
 # Start the application
 CMD [ "node", "app.js" ]
+=======
+FROM node:14
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
+>>>>>>> de9c91e (Added new Jenkins pipeline and Kubernetes deployment files)

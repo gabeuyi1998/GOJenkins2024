@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'git@github.com:gabeuyi1998/GOJenkins2024.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("gojenkins2024:${env.BUILD_ID}")
+                }
+            }
+        }
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    kubectl.apply('-f k8s-deployment.yml')
+                }
+            }
+        }
+    }
+}
