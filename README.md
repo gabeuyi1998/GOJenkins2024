@@ -45,8 +45,6 @@ aws-devops-training/
     ├── notes.txt
     ├── setup-commands.sh
     ├── Agent-success-log.png
-
-
 ### Explanation of Files and Directories
 
 - **`/aws`**: Contains Terraform configuration files responsible for provisioning AWS infrastructure resources.
